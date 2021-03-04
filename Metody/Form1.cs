@@ -50,6 +50,17 @@ namespace Metody
 
         }
 
+        private double faktorial(double x)
+        {
+            double fak = 1;
+            while (x > 0)
+            {
+                fak *= x;
+                x--;
+            }
+            return fak;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             int x1 = int.Parse(textBox1.Text);
@@ -58,6 +69,7 @@ namespace Metody
             int y2 = int.Parse(textBox4.Text);
             MessageBox.Show("Vzdalenost bodu je " + vzdalenost(x1, y1, x2, y2));
             MessageBox.Show("Mocnina prvnich dvou cisel je " + Mocnina(x1, y1));
+            MessageBox.Show("Faktorial prvniho cisla je " + faktorial(x1));
         }
     }
 }
