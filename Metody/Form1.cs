@@ -61,6 +61,16 @@ namespace Metody
             return fak;
         }
 
+        private int CifLichSoucet(int x)
+        {
+            int sou = 0;
+            if ((x % 10) % 2 != 0)
+            {
+                sou = sou + (x % 10);
+            }
+            return sou;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             int x1 = int.Parse(textBox1.Text);
@@ -70,6 +80,7 @@ namespace Metody
             MessageBox.Show("Vzdalenost bodu je " + vzdalenost(x1, y1, x2, y2));
             MessageBox.Show("Mocnina prvnich dvou cisel je " + Mocnina(x1, y1));
             MessageBox.Show("Faktorial prvniho cisla je " + faktorial(x1));
+            MessageBox.Show("Soucet lichych cifer prvniho cisla je " + CifLichSoucet(x1));
         }
     }
 }
