@@ -71,6 +71,34 @@ namespace Metody
             return sou;
         }
 
+        private bool jePrvocislo(int x)
+        {
+            int pocet = 0;
+            if(x == 1)
+            {
+                return false;
+            }
+            if(x == 2)
+            {
+                return true;
+            }
+            for(int i = 3; i < x; ++i)
+            {
+                if (x % i == 0)
+                {
+                    ++pocet;
+                }
+            }
+            if(pocet > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             int x1 = int.Parse(textBox1.Text);
@@ -81,6 +109,7 @@ namespace Metody
             MessageBox.Show("Mocnina prvnich dvou cisel je " + Mocnina(x1, y1));
             MessageBox.Show("Faktorial prvniho cisla je " + faktorial(x1));
             MessageBox.Show("Soucet lichych cifer prvniho cisla je " + CifLichSoucet(x1));
+            MessageBox.Show("Je prvni cislo prvocislo: " + jePrvocislo(x1));
         }
     }
 }
